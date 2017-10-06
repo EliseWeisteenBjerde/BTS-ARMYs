@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @post.body %>
+</p>
+
+
+<p>
+  <strong>User:</strong>
+  <%= @post.user %>
+</p>
+
+<%= link_to 'Give an comment', new_post_comment_path(@post) %>
+  <% @comments.each do |comment| %>
+    <h4><%= comment.body %> posted by <%= comment.user.email %></h4>
+  <% end %>
